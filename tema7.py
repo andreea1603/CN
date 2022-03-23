@@ -48,8 +48,9 @@ def dehghan(a, x0):
             xd = delta(a, x)
         x = x - xd
         k = k + 1
-    if abs(xd) < 10**(-6):
-        #print("Delta este:" , xd)
+    if pxk(a, x) < 10**(-6):
+        print("Delta este:" , xd)
+        print(pxk(a, x))
         return x
     return "Divergenta"
 
@@ -78,9 +79,9 @@ def resolve(a):
 
 if __name__ == '__main__':
     #a = [1, -6, 13, -12, 4]
-    #a = [42, -55, -42, 49, -6]
-    a = [8, -38, 49, -22, 3]
-    a = [1, -6, 13, -12, 4]
+    a = [42, -55, -42, 49, -6]
+    #a = [8, -38, 49, -22, 3]
+    #a = [1, -6, 13, -12, 4]
     r = getR(a)
     print("[-R, R]: ", -r, r)
     resolve(a)
